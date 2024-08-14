@@ -1,0 +1,773 @@
+
+  body {
+    /* font-family: Arial, sans-serif; */
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  }
+.HomePage{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+/* <<header start >>>>>>>>>>>>>>>>> */
+
+/* General header styles */
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    /* background: linear-gradient(45deg, #ff9a8b, #ff6a88);  */
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+    transform: translateY(-100%);
+    animation: slideDown 1s forwards;
+    color: #FFFFFF;
+width: 100%;
+  }
+  
+  @keyframes slideDown {
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+   cursor: pointer;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    color: #FFD700;
+
+
+    text-decoration: none;
+    font-size: 1.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+    font-weight: 600;
+  }
+  
+  nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  nav a:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+  
+  nav a:hover {
+    color: #f0f0f0;
+  }
+  
+  nav a:active {
+    color: #ff9800;
+  }
+  
+  /* nav a:active::before {
+    background-color: #ff9800; 
+  }
+   */
+  /* User and Driver boxes */
+  .user-box, .driver-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .signup {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .signup:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+  }
+  
+  /* Menu icon styles */
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .Header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      display: none;
+    }
+  
+    nav.nav-open {
+      display: flex;
+    }
+  
+    nav a {
+      display: block;
+      margin: 5px 0;
+    }
+  
+    .user-box, .driver-box {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .signup {
+      margin-left: 10px;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  
+/* <<header end >>>>>>>>>>>>>>>>>>> */
+  
+  /* <<<<<hero section start>>>> */
+  .Hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65vh; 
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #1e3c72, #2a5298); /* Gradient background */
+    animation: gradientAnimation 10s ease infinite; /* Gradient animation */
+    border-radius: 1rem;
+    width: 90%;
+    margin-top: 1rem;
+  }
+  
+  .Hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .Hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .Hero button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Hero button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Box shadow styling */
+  .Hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    filter: blur(10px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  /* Gradient animation */
+  @keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(45deg, #1e3c72, #2a5298);
+    }
+    50% {
+      background: linear-gradient(45deg, #2a5298, #1e3c72);
+    }
+    100% {
+      background: linear-gradient(45deg, #1e3c72, #2a5298);
+    }
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .Hero h1 {
+      font-size: 2rem;
+    }
+  
+    .Hero p {
+      font-size: 1rem;
+    }
+  
+    .Hero button {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+  }
+  
+  /* <<<<hero section end .... */
+  
+ /* About section styling */
+.About {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px; 
+    background: #ffffff; 
+    color: #333333; 
+    text-align: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 10px 8px 24px;
+    border-radius: 1rem;
+    width: 90%;
+    /* margin: 0 auto; */
+    margin-top: 1rem;
+    position: relative; 
+    overflow: hidden;
+  }
+  
+  /* Add a decorative pseudo-element */
+  .About::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 105, 135, 0.1), rgba(255, 180, 193, 0.1));
+    z-index: 0; /* Place behind the content */
+    border-radius: 1rem; /* Match border radius of the section */
+    pointer-events: none; /* Allow clicks through the pseudo-element */
+  }
+  
+  /* Ensure text content is above the pseudo-element */
+  .About h2, .About p {
+    position: relative; /* Place content above pseudo-element */
+    z-index: 1;
+    
+  }
+  
+  .About h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #ff6a88; 
+    /* font-family: 'Roboto', sans-serif;  */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .About p {
+    font-size: 1.25rem;
+    line-height: 1.8; 
+    color: #666666; 
+    /* font-family: 'Open Sans', sans-serif; */
+    max-width: 800px;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .About h2 {
+      font-size: 2rem;
+    }
+  
+    .About p {
+      font-size: 1rem;
+    }
+  }
+  
+  
+  
+/* Services section styling */
+.Services {
+    background-color: #ffffff; 
+    padding: 60px 20px; 
+    text-align: center; 
+    position: relative; 
+    overflow: hidden; 
+    width: 90%;
+    border-radius: 1rem; 
+    margin-top: 1rem;
+  }
+  
+  /* Decorative pseudo-element for added style */
+  .Services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(72, 133, 237, 0.1), rgba(252, 175, 69, 0.1));
+    z-index: 0; 
+    border-radius: 1rem; 
+    pointer-events: none; 
+  }
+  
+  /* Ensure text content is above pseudo-element */
+  .Services h2 {
+    position: relative; 
+    z-index: 1;
+    font-size: 2.5rem; 
+    margin-bottom: 1.5rem;
+    color: #4a90e2; 
+    /* font-family: 'Roboto', sans-serif;  */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .service-cards .card {
+    flex: 1 1 30%;
+    margin: 10px;
+    padding: 20px;
+    background: linear-gradient(45deg, #1e3c72, #2a5298); 
+    border-radius: 10px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .service-cards .card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-cards .card h3 {
+    font-size: 1.6rem; 
+    margin-bottom: 1rem;
+    color: #f39c12; 
+  }
+  
+  .service-cards .card p {
+    font-size: 1.2rem;
+    color: #ffff; 
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .service-cards .card {
+      flex: 1 1 100%; /* Full width on smaller screens */
+      margin: 10px 0;
+    }
+  
+    .Services h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  
+/* How It Works section styling */
+.HowItWorks {
+    background-color: #ffffff; 
+    padding: 60px 20px; 
+    text-align: center; 
+    position: relative;
+    overflow: hidden; 
+    margin-top: 1rem;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    width: 90%;
+    border-radius: 1rem;
+  }
+  
+  /* Decorative pseudo-element for added style */
+  .HowItWorks::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 204, 255, 0.1), rgba(255, 180, 0, 0.1));
+    z-index: 0; 
+    border-radius: 1rem; 
+    pointer-events: none; 
+  }
+  
+  /* Ensure text content is above pseudo-element */
+  .HowItWorks h2 {
+    position: relative; 
+    z-index: 1;
+    font-size: 2.5rem; 
+    margin-bottom: 1.5rem;
+    color: #00bcd4; 
+    /* font-family: 'Roboto', sans-serif;  */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .steps .step {
+    flex: 1 1 30%; 
+    margin: 15px; 
+    padding: 25px; 
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .steps .step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .steps .step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ff9800; 
+  }
+  
+  .steps .step p {
+    font-size: 1rem;
+    color: #666666; 
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .steps .step {
+      flex: 1 1 100%; 
+      margin: 10px 0;
+    }
+  
+    .HowItWorks h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* UserSection styling */
+.UserSection {
+    background-color: #ffffff; 
+    padding: 60px 20px; 
+    text-align: center; 
+    position: relative; 
+    overflow: hidden; 
+    width: 90%;
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
+  
+  /* Decorative pseudo-element for added style */
+  .UserSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(232, 65, 24, 0.1), rgba(252, 175, 69, 0.1));
+    z-index: 0; 
+    border-radius: 1rem; 
+    pointer-events: none; 
+  }
+  
+  /* Ensure text content is above pseudo-element */
+  .UserSection h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 2.5rem; 
+    margin-bottom: 1.5rem;
+    color: #e84118;
+    /* font-family: 'Roboto', sans-serif;  */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .UserSection p {
+    position: relative; 
+    z-index: 1;
+    font-size: 1.25rem; 
+    color: #555555; 
+    line-height: 1.8; 
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .UserSection h2 {
+      font-size: 2rem; 
+    }
+  
+    .UserSection p {
+      font-size: 1rem;
+    }
+  }
+  
+  
+  /* TruckDriverSection styling */
+.TruckDriverSection {
+    background-color: #ffffff; 
+    padding: 60px 20px;
+    text-align: center;
+    position: relative; 
+    overflow: hidden;
+    width: 90%;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Decorative pseudo-element for added style */
+  .TruckDriverSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 150, 136, 0.1), rgba(255, 87, 34, 0.1));
+    z-index: 0; 
+    border-radius: 1rem; 
+    pointer-events: none; 
+  }
+  
+  /* Ensure text content is above pseudo-element */
+  .TruckDriverSection h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 2.5rem; 
+    margin-bottom: 1.5rem;
+    color: #009688; 
+    /* font-family: 'Roboto', sans-serif; */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .TruckDriverSection p {
+    position: relative; 
+    z-index: 1;
+    font-size: 1.25rem;
+    color: #555555; 
+    line-height: 1.8; 
+    max-width: 800px;
+    margin: 0 auto; 
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .TruckDriverSection h2 {
+      font-size: 2rem;
+    }
+  
+    .TruckDriverSection p {
+      font-size: 1rem;
+    }
+  }
+  
+ /* Contact section styling */
+.Contact {
+    background-color: #ffffff;
+    padding: 60px 20px; 
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+    width: 90%;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Decorative pseudo-element for added style */
+  .Contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(255, 87, 34, 0.1));
+    z-index: 0; 
+    border-radius: 1rem; 
+    pointer-events: none; 
+  }
+  
+  /* Ensure text content is above pseudo-element */
+  .Contact h2 {
+    position: relative; 
+    z-index: 1;
+    font-size: 2.5rem; 
+    margin-bottom: 1.5rem;
+    color: #00bcd4; 
+    /* font-family: 'Roboto', sans-serif;  */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 15px; 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-size: 1rem; 
+  }
+  
+  .contact-form button {
+    align-self: flex-end;
+    background-color: #00bcd4; 
+    color: #ffffff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .contact-form button:hover {
+    background-color: #0097a7;
+  }
+  
+  .contact-info {
+    margin-top: 20px;
+  }
+  
+  .contact-info p {
+    font-size: 1.25rem; 
+    color: #666666; 
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .Contact h2 {
+      font-size: 2rem; 
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 0.875rem; 
+    }
+  
+    .contact-form button {
+      font-size: 0.875rem;
+    }
+  }
+  /* Footer section styling */
+.Footer {
+    background: linear-gradient(180deg, #333333, #000000); 
+    color: #ffffff;
+    padding: 40px 20px; 
+    text-align: center; 
+    position: relative; 
+    width: 90%;
+    margin-top: 1rem;
+    border-radius: 1rem 1rem 0 0 ;
+  }
+  
+  /* Decorative pseudo-element for added style */
+  .Footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(0, 188, 212, 0.1));
+    z-index: 0; 
+    pointer-events: none; 
+  }
+  
+  .Footer h2 {
+    position: relative; 
+    z-index: 1;
+    font-size: 2rem;
+    margin-bottom: 15px; 
+  }
+  
+  .Footer p {
+    font-size: 1rem;
+    margin-bottom: 20px; 
+  }
+  
+  /* Social links styling */
+  .Footer .social-links {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 15px; 
+  }
+  
+  .Footer .social-links a {
+    color: #ffffff; 
+    margin: 0 15px; 
+    font-size: 1.25rem; 
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .Footer .social-links a:hover {
+    text-decoration: underline; 
+    color: #ff6f61; 
+    transform: scale(1.1); 
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .Footer h2 {
+      font-size: 1.5rem; 
+    }
+  
+    .Footer p {
+      font-size: 0.875rem; 
+    }
+  
+    .Footer .social-links a {
+      font-size: 1rem; 
+      margin: 0 10px; 
+    }
+  }
+  
